@@ -19,8 +19,10 @@ package = 'parity-scale-codec'
 version = '1.3.4'
 
 [dependencies]
+sp-std = { default-features = false, version = '2.0.0' }
 frame-support = { default-features = false, version = '2.0.0' }
 frame-system = { default-features = false, version = '2.0.0' }
+stark-primitives = { default-features = false, path = '../../primitives/stark-primitives' }
 
 [dev-dependencies]
 sp-core = { default-features = false, version = '2.0.0' }
@@ -30,7 +32,8 @@ sp-runtime = { default-features = false, version = '2.0.0' }
 [features]
 default = ['std']
 std = [
-    'codec/std',
+    'sp-std/std',
     'frame-support/std',
     'frame-system/std',
+    'stark-primitives/std'
 ]
