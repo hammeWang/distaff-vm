@@ -3515,6 +3515,7 @@ dependencies = [
  "sp-inherents",
  "sp-runtime",
  "sp-transaction-pool",
+ "stark-primitives",
  "structopt",
  "substrate-build-script-utils",
  "substrate-frame-rpc-system",
@@ -3856,6 +3857,7 @@ version = "2.0.0"
 dependencies = [
  "frame-support",
  "frame-system",
+ "hex",
  "parity-scale-codec",
  "sp-core",
  "sp-io",

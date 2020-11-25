@@ -10,13 +10,14 @@ use sc_executor::native_executor_instance;
 pub use sc_executor::NativeExecutor;
 use sp_consensus_aura::sr25519::{AuthorityPair as AuraPair};
 use sc_finality_grandpa::{FinalityProofProvider as GrandpaFinalityProofProvider, SharedVoterState};
+use stark_primitives;
 
 // Our native executor instance.
 native_executor_instance!(
 	pub Executor,
 	node_template_runtime::api::dispatch,
 	node_template_runtime::native_version,
-	frame_benchmarking::benchmarking::HostFunctions,
+	(frame_benchmarking::benchmarking::HostFunctions, stark_primitives::stark::HostFunctions),
 );
 
 type FullClient = sc_service::TFullClient<Block, RuntimeApi, Executor>;

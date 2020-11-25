@@ -52,6 +52,9 @@ sp-runtime = '2.0.0'
 sp-transaction-pool = '2.0.0'
 substrate-frame-rpc-system = '2.0.0'
 
+# custom
+stark-primitives = {path = "../primitives/stark-primitives" }
+
 [features]
 default = []
 runtime-benchmarks = ['node-template-runtime/runtime-benchmarks']

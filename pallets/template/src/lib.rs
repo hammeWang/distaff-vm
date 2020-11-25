@@ -38,6 +38,7 @@ decl_event!(
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		SomethingStored(u32, AccountId),
+		Verified(AccountId),
 	}
 );
 
@@ -69,6 +70,7 @@ decl_module! {
 			proof: Vec<u8>) {
 			let who = ensure_signed(origin)?;
 			Self::stark_verify(&program_hash, &public_inputs, &outputs, &proof);
+			Self::deposit_event(RawEvent::Verified(who));
 		}
 	}
 }
